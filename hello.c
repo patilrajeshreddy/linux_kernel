@@ -12,14 +12,29 @@ int init_module(void)
 
 	printk("HELLO WORLD\n");
 
-        return 0;
+        printk("dump_stack() is started in %s\n",__func__);
+        
+	/*stack trace for debugging*/
+	dump_stack();
+
+        printk("dump_stack() is completed in %s\n",__func__);
+        
+	return 0;
+
 }
 
 
 /*unloading kernel module,this cleanup_module called by the rmmod tool*/
 void cleanup_module(void)
 {
-        printk("%s:Module removed\n",__func__);
+	printk("dump_stack() is started in %s\n",__func__);
+        
+	/*stack trace for debugging*/
+	dump_stack();
+
+        printk("dump_stack() is completed in %s\n",__func__);
+        
+	printk("%s:Module removed\n",__func__);
 
 }
 
