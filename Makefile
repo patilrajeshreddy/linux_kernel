@@ -1,6 +1,9 @@
 # target & input files
 
 obj-m :=hello.o
+obj-m +=hello_export_symbol1.o
+obj-m +=hello_export_symbol2.o
+
 
 # variable/macro to hold kernel-headers/kernel-source directory path
 
