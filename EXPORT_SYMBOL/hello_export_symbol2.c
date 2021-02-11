@@ -3,7 +3,6 @@
 #include<linux/module.h>
 #include<linux/init.h>
 
-/* this function exporting */
 void func(void)
 {
         printk("%s:Hello world\n",__func__);
