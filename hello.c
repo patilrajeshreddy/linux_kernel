@@ -1,4 +1,4 @@
-/* writting a kernel module */
+/* writting a  basic kernel module */
 
 
 #include<linux/module.h> /* include for all kernel modules */
@@ -14,10 +14,11 @@ int init_module(void)
 
         printk("dump_stack() is started in %s\n",__func__);
         
+	printk("DEBUG_INFO:started in %s\n",__func__);
 	/*stack trace for debugging*/
 	dump_stack();
 
-        printk("dump_stack() is completed in %s\n",__func__);
+        printk("DEBUG_INFO:completed in %s\n",__func__);
         
 	return 0;
 
